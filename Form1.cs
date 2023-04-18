@@ -184,6 +184,10 @@ namespace ToDo_List
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists("tasks.txt"))
+            {
+                File.Create("tasks.txt").Close();
+            }
             using (StreamReader reader = new StreamReader("tasks.txt"))
             {
                 string line;
